@@ -40,8 +40,7 @@ class ItemsController extends Controller
                 'hits' => 20,
             ]);
             
-            //テスト用、後で消す
-            dd($rws_response->getData());
+           
             
             // 扱い易いように Item としてインスタンスを作成する（保存はしない）
             foreach ($rws_response->getData()['Items'] as $rws_item) {
