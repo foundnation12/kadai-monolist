@@ -41,7 +41,7 @@ class ItemsController extends Controller
             ]);
             
            
-            if(array_key_exists('Items', $rws_response->getData())){
+           
             // 扱い易いように Item としてインスタンスを作成する（保存はしない）
             foreach ($rws_response->getData()['Items'] as $rws_item) {
                 $item = new \App\Item();
@@ -52,7 +52,7 @@ class ItemsController extends Controller
                 $items[] = $item;
                 }
             }
-        }
+        
         
         
 
