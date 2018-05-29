@@ -41,7 +41,7 @@ class ItemsController extends Controller
             ]);
             
            
-            
+            if(array_key_exists('Items', $rws_response->getData())){
             // 扱い易いように Item としてインスタンスを作成する（保存はしない）
             foreach ($rws_response->getData()['Items'] as $rws_item) {
                 $item = new \App\Item();
@@ -50,8 +50,11 @@ class ItemsController extends Controller
                 $item->url = $rws_item['Item']['itemUrl'];
                 $item->image_url = str_replace('?_ex=128x128', '', $rws_item['Item']['mediumImageUrls'][0]['imageUrl']);
                 $items[] = $item;
+                }
             }
         }
+        
+        
 
         return view('items.create', [
             'keyword' => $keyword,
