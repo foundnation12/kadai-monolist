@@ -15,12 +15,13 @@
                                 <p class="item-title">{{ $item->name }}</p>
                             @endif
                         </div>
-                        <div class="buttons text-center">
                                 @if (Auth::check())
+                                <div class="buttons text-center">
                                     @include('items.want_button', ['item' => $item])
                                     @include('items.have_button', ['item' => $item])
+                                </div>
                                 @endif
-                        </div>
+                                
                         @if (isset($item->count))
                             <div class="panel-footer">
                                 <p class="text-center">{{ $key+1 }}位: {{ $item->count}} {{$type}}</p>
